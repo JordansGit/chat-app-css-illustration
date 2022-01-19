@@ -1,20 +1,49 @@
 body {
   display: grid;
   grid-template-columns: 25% 25% 50%;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+}
+
+body, h1, h2, p {
   margin: 0;
+}
+
+body, section {
+  background: hsl(270, 20%, 96%);
+}
+
+.bg-design, .radio {
+  background: linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%)); 
+}
+
+header {
+  background: linear-gradient(to left, hsl(293, 100%, 63%), hsl(264, 100%, 61%)); 
 }
 
 .phone-screen-outer {
   grid-column: 2 / 3;
-  border: 1px solid black;
+  background: hsl(0, 0%, 100%);
+  padding: 10px;
+  box-shadow: 3px 10px 25px -4px hsl(0, 0%, 50%); 
+  height: 550px;
+  width: 230px;
 }
+
+
 
 .big-text {
   grid-column: 3 / 5;
   border: 1px solid red;
+  padding-left: 20px;
 }
 
 .bg-design {
   position: absolute;
+  height: 700px; 
+  width: 500px;
+  border-bottom-left-radius: 255px;
+  border-bottom-right-radius: 255px;
+  left: -100px;
+  z-index: -1;
 }
-
