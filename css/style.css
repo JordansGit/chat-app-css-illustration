@@ -1,12 +1,17 @@
+html, body {
+  height: 100%;
+}
+
+html, body, h1, h2, p {
+  margin: 0;
+}
+
 body {
   display: grid;
   grid-template-columns: 25% 25% 50%;
   font-family: 'Rubik', sans-serif;
   font-size: 16px;
-}
-
-body, h1, h2, p {
-  margin: 0;
+  align-items: center;
 }
 
 body, section {
@@ -17,33 +22,153 @@ body, section {
   background: linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%)); 
 }
 
-header {
-  background: linear-gradient(to left, hsl(293, 100%, 63%), hsl(264, 100%, 61%)); 
-}
 
+
+/* PHONE SCREEN */ 
 .phone-screen-outer {
   grid-column: 2 / 3;
   background: hsl(0, 0%, 100%);
   padding: 10px;
-  box-shadow: 3px 10px 25px -4px hsl(0, 0%, 50%); 
-  height: 550px;
+  box-shadow: 3px 10px 25px -4px hsl(0, 0%, 50%); /* have this on msg 2 so need to refactor */ 
+  height: 500px;
   width: 230px;
+  justify-self: center;
+  border-radius: 30px;
+}
+
+header {
+  background: linear-gradient(to left, hsl(293, 100%, 63%), hsl(264, 100%, 61%)); 
+  border-radius: 20px 20px 5px 5px;
+  height: 65px;
+}
+
+h2 {
+  color: white;
+}
+
+header p {
+  color: hsl(276, 100%, 81%); 
+}
+
+section{
+  border-radius: 0 0 25px 25px;
+  height: 435px;
+  display: grid;
+  padding: 10px;
+}
+
+.phone-screen {
+}
+
+.phone-screen p, label {
+  font-size: 8px;
+}
+
+.message {
+  width: 60%;
+  margin: 5px 0;
+}
+
+.message-1 {
+  /* corners on all except bottom left*/
+  color: hsl(276, 55%, 52%);
+}
+
+.message-2 {
+  justify-self: end;
+  background: hsl(0, 0%, 100%); 
+  box-shadow: 3px 10px 25px -4px hsl(0, 0%, 50%);
+  color: hsl(271, 15%, 43%);
+  /* corners on all except bottom right*/ 
+}
+
+.radio {
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+
+input[type="radio"] {
+  margin: 0 10px; 
+}
+
+label {
+  color: hsl(0, 0%, 80%);
+}
+
+.radio p {
+  margin-left: auto;
+  color: hsl(0, 0%, 100%);
+  margin-right: 20px;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 
 
+
+
+
+/* BIG TEXT ON RIGHT SIDE */ 
 .big-text {
   grid-column: 3 / 5;
-  border: 1px solid red;
-  padding-left: 20px;
+  padding-left: 15px;
+  margin-bottom: 20px;
+  width: 450px;
+  line-height: 1.8;
 }
 
+h1 {
+  margin-bottom: 10px;
+  font-size: 40px;
+  font-weight: 500;
+  color: hsl(271, 36%, 24%);
+}
+
+.big-text p {
+  color: hsl(270, 7%, 64%);
+}
+
+
+::placeholder {
+  color: hsl(206, 6%, 79%);
+}
+
+::-webkit-input-placeholder { /* Edge */
+  color: hsl(206, 6%, 79%);
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: hsl(206, 6%, 79%);
+}
+
+
+
+
+/* BG DESIGN */ 
 .bg-design {
   position: absolute;
-  height: 700px; 
-  width: 500px;
-  border-bottom-left-radius: 255px;
-  border-bottom-right-radius: 255px;
-  left: -100px;
+  height: 800px; 
+  width: 550px;
+  border-bottom-left-radius: 280px;
+  border-bottom-right-radius: 280px;
+  left: 100px;
   z-index: -1;
+  align-self: start;
 }
+
+/* need to add bottom right bg design */
+
+
+/* max width of phone text 60%, but make it fill the width of the text beforehand. i think just changing width to max-width should od the trick. 
+rounded corners 
+bg color of message-1 
+sort out header 
+add header design 
+add 3 dots on header 
+
+add > arrow + a circle around it to my placeholder text at bottom.  
+ + make it width 100%; 
+
+
+*/ 
