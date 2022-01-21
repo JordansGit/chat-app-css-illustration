@@ -40,6 +40,8 @@ header {
   background: linear-gradient(to left, hsl(293, 100%, 63%), hsl(264, 100%, 61%)); 
   border-radius: 20px 20px 5px 5px;
   height: 65px;
+  display: flex;
+  align-items: center;
 }
 
 h2 {
@@ -52,44 +54,61 @@ header p {
 
 section{
   border-radius: 0 0 25px 25px;
-  height: 435px;
+  height: 415px;
   display: grid;
   padding: 10px;
-}
+  grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content;
 
-.phone-screen {
 }
 
 .phone-screen p, label {
   font-size: 8px;
 }
 
+h2, input[type="text"] {
+  font-size: 10px;
+}
+
 .message {
-  width: 60%;
   margin: 5px 0;
+  align-items: start;
+  padding: 8px;
+}
+
+.message-1, .message-2 {
+  max-width: 53%;
+}
+
+.message-1, .radio {
+  border-radius: 10px 10px 10px 5px; /* corners on all except bottom left*/
 }
 
 .message-1 {
-  /* corners on all except bottom left*/
   color: hsl(276, 55%, 52%);
+  background: hsl(293, 58%, 93%);
 }
 
 .message-2 {
+  border-radius: 10px 10px 5px 10px; /* corners on all except bottom right*/ 
   justify-self: end;
   background: hsl(0, 0%, 100%); 
   box-shadow: 3px 10px 25px -4px hsl(0, 0%, 50%);
   color: hsl(271, 15%, 43%);
-  /* corners on all except bottom right*/ 
+  
+}
+
+.message-imgs {
+  display: flex;
 }
 
 .radio {
-  width: 80%;
+  width: 75%;
   display: flex;
   align-items: center;
 }
 
 input[type="radio"] {
-  margin: 0 10px; 
+  margin: 0 10px 0 0; 
 }
 
 label {
@@ -104,9 +123,16 @@ label {
   font-weight: 700;
 }
 
+.send-message {
+  align-self: end;
+}
 
-
-
+input[type="text"] {
+  border: none;
+  border-radius: 25px;
+  padding: 15px 20px;
+  width: 81%;
+}
 
 
 /* BIG TEXT ON RIGHT SIDE */ 
@@ -170,5 +196,13 @@ add 3 dots on header
 add > arrow + a circle around it to my placeholder text at bottom.  
  + make it width 100%; 
 
+
+*/ 
+
+/* 
+  change the syntax of message1 and message2 to message-left, ...-right. 
+  then add 2 classes -> message-left-radio + message-left-text. + message-right-text
+    -> so I can put my .radio class in the ...-radio class, and the ...left-... syntax that doesn't belong in radio to it's own seperate css. 
+            -> this is more cleaner code. 
 
 */ 
