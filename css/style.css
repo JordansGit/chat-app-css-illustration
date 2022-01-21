@@ -12,6 +12,7 @@ body {
   font-family: 'Rubik', sans-serif;
   font-size: 16px;
   align-items: center;
+  position: relative;
 }
 
 body, section {
@@ -20,6 +21,22 @@ body, section {
 
 .bg-design, .radio {
   background: linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%)); 
+}
+
+
+
+/* BG DESIGN */ 
+.bg-design {
+  position: absolute;
+  height: 800px; 
+  width: 550px;
+  border-bottom-left-radius: 280px;
+  border-bottom-right-radius: 280px;
+  /*right: 972px;*/ 
+  right: 66%;
+  z-index: -1;
+  align-self: start;
+  
 }
 
 
@@ -36,22 +53,58 @@ body, section {
   border-radius: 30px;
 }
 
+/* PHONE SCREEN- HEADER */ 
 header {
   background: linear-gradient(to left, hsl(293, 100%, 63%), hsl(264, 100%, 61%)); 
   border-radius: 20px 20px 5px 5px;
-  height: 65px;
+  height: 50px;
   display: flex;
   align-items: center;
+  gap: 8px;
+  padding: 16px 16px 0 16px;
+  position: relative;
+
+}
+
+.header-design {
+  position: absolute;
+  width: 140px;
+  height: 20px;
+  background: white;
+  border-radius: 0 0 15px 15px;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+header img {
+  border-radius: 25px;
+  border: 1px solid white;
+}
+
+h2, span {
+  color: white;
 }
 
 h2 {
-  color: white;
+  font-weight: 400;
+}
+
+span {
+  font-weight: 500;
 }
 
 header p {
   color: hsl(276, 100%, 81%); 
+  margin-top: 2px;
+
 }
 
+.v-ellipsis {
+  margin-left: auto;
+}
+
+/* PHONE SCREEN- MSG SECTION */ 
 section{
   border-radius: 0 0 25px 25px;
   height: 415px;
@@ -66,7 +119,7 @@ section{
 }
 
 h2, input[type="text"] {
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .message {
@@ -92,17 +145,22 @@ h2, input[type="text"] {
   border-radius: 10px 10px 5px 10px; /* corners on all except bottom right*/ 
   justify-self: end;
   background: hsl(0, 0%, 100%); 
-  box-shadow: 3px 10px 25px -4px hsl(0, 0%, 50%);
+  box-shadow: 3px 3px 6px -4px hsl(0, 0%, 50%);
   color: hsl(271, 15%, 43%);
   
 }
 
 .message-imgs {
   display: flex;
+  gap: 10px;
+}
+
+.message-imgs img {
+  border-radius: 10px;
 }
 
 .radio {
-  width: 75%;
+  width: 70%;
   display: flex;
   align-items: center;
 }
@@ -118,21 +176,50 @@ label {
 .radio p {
   margin-left: auto;
   color: hsl(0, 0%, 100%);
-  margin-right: 20px;
+  margin-right: 10px;
   font-size: 13px;
   font-weight: 700;
 }
 
+
+/* PHONE SCREEN- SEND MESSAGE FORM */ 
 .send-message {
   align-self: end;
+  display: flex;
+  border-radius: 25px;
+  background: white; 
+  justify-content: space-between;
+  padding: 5px 5px 5px 15px;
 }
 
 input[type="text"] {
   border: none;
-  border-radius: 25px;
-  padding: 15px 20px;
-  width: 81%;
+  outline: none;
 }
+
+.circle {
+  background: hsl(271, 36%, 24%); 
+  height: 25px;
+  width: 25px;
+  border-radius: 30px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+
+}
+
+::placeholder {
+  color: hsl(206, 6%, 79%);
+}
+
+::-webkit-input-placeholder { /* Edge */
+  color: hsl(206, 6%, 79%);
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: hsl(206, 6%, 79%);
+}
+
 
 
 /* BIG TEXT ON RIGHT SIDE */ 
@@ -156,48 +243,6 @@ h1 {
 }
 
 
-::placeholder {
-  color: hsl(206, 6%, 79%);
-}
-
-::-webkit-input-placeholder { /* Edge */
-  color: hsl(206, 6%, 79%);
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: hsl(206, 6%, 79%);
-}
-
-
-
-
-/* BG DESIGN */ 
-.bg-design {
-  position: absolute;
-  height: 800px; 
-  width: 550px;
-  border-bottom-left-radius: 280px;
-  border-bottom-right-radius: 280px;
-  left: 100px;
-  z-index: -1;
-  align-self: start;
-}
-
-/* need to add bottom right bg design */
-
-
-/* max width of phone text 60%, but make it fill the width of the text beforehand. i think just changing width to max-width should od the trick. 
-rounded corners 
-bg color of message-1 
-sort out header 
-add header design 
-add 3 dots on header 
-
-add > arrow + a circle around it to my placeholder text at bottom.  
- + make it width 100%; 
-
-
-*/ 
 
 /* 
   change the syntax of message1 and message2 to message-left, ...-right. 
@@ -205,4 +250,15 @@ add > arrow + a circle around it to my placeholder text at bottom.
     -> so I can put my .radio class in the ...-radio class, and the ...left-... syntax that doesn't belong in radio to it's own seperate css. 
             -> this is more cleaner code. 
 
+*/ 
+
+/* TO DO 
+  phone header -> add a absolute positioned div class -> make it box-content so it stays positioned on the phone div when resizing. 
+  add bottom right bg design
+
+  phone radio button -> custom 
+
+  re do syntax -> this will fix dog images aswell. 
+
+  last but not least, make the bg design responsive with the phone screen div. (so it moves left at the same pace as the phone screen). 
 */ 
