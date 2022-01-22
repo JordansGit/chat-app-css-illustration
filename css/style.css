@@ -13,13 +13,14 @@ body {
   font-size: 16px;
   align-items: center;
   position: relative;
+  background: white;
 }
 
-body, section {
+.bg-design-2, section {
   background: hsl(270, 20%, 96%);
 }
 
-.bg-design, .radio {
+.bg-design-1, .radio {
   background: linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%)); 
 }
 
@@ -30,15 +31,23 @@ body, section {
   position: absolute;
   height: 800px; 
   width: 550px;
+  z-index: -1;
+  align-self: start;
+}
+
+.bg-design-1 {
   border-bottom-left-radius: 280px;
   border-bottom-right-radius: 280px;
   /*right: 972px;*/ 
-  right: 66%;
-  z-index: -1;
-  align-self: start;
-  
+  right: 66.2%; /* looks properly alligned @ fullscreen 24inch, need to change this on media query in order to make it look decent on responsively */ 
 }
 
+.bg-design-2 {
+  bottom: 0;
+  border-top-left-radius: 280px;
+  border-top-right-radius: 280px;
+  left: 70.5%; /* looks properly alligned @ fullscreen 24inch, need to change this on media query in order to make it look decent on responsively */ 
+}
 
 
 /* PHONE SCREEN */ 
@@ -128,49 +137,61 @@ h2, input[type="text"] {
   padding: 8px;
 }
 
-.message-1, .message-2 {
+.message-left-text, .message-right-text {
   max-width: 53%;
 }
 
-.message-1, .radio {
+.message-left {
   border-radius: 10px 10px 10px 5px; /* corners on all except bottom left*/
 }
 
-.message-1 {
+.message-left-text {
   color: hsl(276, 55%, 52%);
   background: hsl(293, 58%, 93%);
 }
 
-.message-2 {
+.message-right {
   border-radius: 10px 10px 5px 10px; /* corners on all except bottom right*/ 
   justify-self: end;
+
+}
+
+.message-right-text {
   background: hsl(0, 0%, 100%); 
   box-shadow: 3px 3px 6px -4px hsl(0, 0%, 50%);
   color: hsl(271, 15%, 43%);
-  
 }
 
 .message-imgs {
   display: flex;
   gap: 10px;
+  padding: 5px 0 0 0;
 }
 
 .message-imgs img {
   border-radius: 10px;
 }
 
+/* PHONE SCREEN RADIO BUTTON */ 
+
 .radio {
   width: 70%;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 input[type="radio"] {
-  margin: 0 10px 0 0; 
+  /*margin: 0 10px 0 0; */
 }
 
 label {
   color: hsl(0, 0%, 80%);
+  margin: 0 0 0 22px; 
+}
+
+label:hover {
+  cursor: pointer;
 }
 
 .radio p {
@@ -181,6 +202,23 @@ label {
   font-weight: 700;
 }
 
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-radio-button {
+  position: absolute;
+  height: 11px;
+  width: 11px;
+  border-radius: 50%;
+  border: 1px solid hsl(289, 100%, 72%); 
+}
+
+input[type="radio"]:checked ~ .custom-radio-button {
+  background: hsl(289, 100%, 72%); 
+}
 
 /* PHONE SCREEN- SEND MESSAGE FORM */ 
 .send-message {
@@ -243,22 +281,11 @@ h1 {
 }
 
 
-
-/* 
-  change the syntax of message1 and message2 to message-left, ...-right. 
-  then add 2 classes -> message-left-radio + message-left-text. + message-right-text
-    -> so I can put my .radio class in the ...-radio class, and the ...left-... syntax that doesn't belong in radio to it's own seperate css. 
-            -> this is more cleaner code. 
-
-*/ 
-
 /* TO DO 
-  phone header -> add a absolute positioned div class -> make it box-content so it stays positioned on the phone div when resizing. 
-  add bottom right bg design
+  last but not least, make both bg design's responsive with the phone screen div. (so it moves left at the same pace as the phone screen). 
 
-  phone radio button -> custom 
+  phone ver of site 
 
-  re do syntax -> this will fix dog images aswell. 
-
-  last but not least, make the bg design responsive with the phone screen div. (so it moves left at the same pace as the phone screen). 
+  -> for the radio button, I could put the radio buttons contents inside the label tags 
+      so it hovers on everything instead of just text. cba. just move onto next project. 
 */ 
