@@ -31,3 +31,9 @@ Desktop
 Mobile 
 
 ![Mobile Screen](./screenshots/mobile-screenshot-375x975.png)
+
+Half
+![Mobile Screen](./screenshots/mobile-screenshot-375x975-half.png)
+
+Full
+![Mobile Screen](./screenshots/mobile-screenshot-375x975-full.png)
