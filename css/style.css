@@ -1,5 +1,7 @@
 html, body {
   height: 100%;
+  overflow: hidden;
+
 }
 
 html, body, h1, h2, p {
@@ -13,7 +15,7 @@ body {
   font-size: 16px;
   align-items: center;
   position: relative;
-  background: white;
+  background: hsl(0, 0%, 98%);
 }
 
 .bg-design-2, section {
@@ -29,7 +31,7 @@ body {
 /* BG DESIGN */ 
 .bg-design {
   position: absolute;
-  height: 800px; 
+  height: 700px; 
   width: 550px;
   z-index: -1;
   align-self: start;
@@ -38,15 +40,15 @@ body {
 .bg-design-1 {
   border-bottom-left-radius: 280px;
   border-bottom-right-radius: 280px;
-  /*right: 972px;*/ 
-  right: 66.2%; /* looks properly alligned @ fullscreen 24inch, need to change this on media query in order to make it look decent on responsively */ 
+  right: 67.3%;  
 }
 
 .bg-design-2 {
   bottom: 0;
   border-top-left-radius: 280px;
   border-top-right-radius: 280px;
-  left: 70.5%; /* looks properly alligned @ fullscreen 24inch, need to change this on media query in order to make it look decent on responsively */ 
+  left: 81.8%;  
+  align-self: end;
 }
 
 
@@ -181,10 +183,6 @@ h2, input[type="text"] {
   position: relative;
 }
 
-input[type="radio"] {
-  /*margin: 0 10px 0 0; */
-}
-
 label {
   color: hsl(0, 0%, 80%);
   margin: 0 0 0 22px; 
@@ -263,7 +261,7 @@ input[type="text"] {
 /* BIG TEXT ON RIGHT SIDE */ 
 .big-text {
   grid-column: 3 / 5;
-  padding-left: 15px;
+  padding-left: 80px;
   margin-bottom: 20px;
   width: 450px;
   line-height: 1.8;
@@ -280,12 +278,87 @@ h1 {
   color: hsl(270, 7%, 64%);
 }
 
+/* MEDIA QUERIES */ 
+@media only screen and (max-width: 375px) {
+  html, body {
+    overflow: scroll;
+  }
+
+  body {
+    grid-template-columns: 100%;
+    background: hsl(270, 20%, 96%);
+  }
+  .bg-design-2 {
+    display: none;
+  }
+  .bg-design-1 {
+    right: 50%;
+    height: 60%;
+    width: 126%;
+  }
+
+  .phone-screen-outer {
+    grid-column: 1 / 1;
+    margin: 70px 0 50px 0;
+  }  
+  .big-text {
+    grid-column: 1 / 1;
+    text-align: center;
+    padding: 0 30px 60px 30px;
+    width: auto;
+  }
+}
+
+/* FULL SCREEN MEDIA QUERY - CBA TO PROPERLY FIX THIS PROJECT ATM */ 
+@media only screen and (min-width: 1500px) {
+  .bg-design-1 {
+    right: 67%;
+  }
+  .bg-design-2 {
+    left: 80%;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .bg-design-1 {
+    right: 66.5%;
+  }
+  .bg-design-2 {
+    left: 78.5%;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .bg-design-1 {
+    right: 66.4%;
+  }
+  .bg-design-2 {
+    left: 77%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .bg-design-1 {
+    right: 66.3%;
+  }
+  .bg-design-2 {
+    left: 75.5%;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .bg-design-1 {
+    right: 66.2%;
+  }
+  .bg-design-2 {
+    left: 74%;
+  }
+}
+
 
 /* TO DO 
   last but not least, make both bg design's responsive with the phone screen div. (so it moves left at the same pace as the phone screen). 
+  - if i come back to edit this, maybe make a background container that is absolute positioned, then use grid and 
+  negative positioning or something, idk need more research on absolute positioning, ... 
 
-  phone ver of site 
-
-  -> for the radio button, I could put the radio buttons contents inside the label tags 
-      so it hovers on everything instead of just text. cba. just move onto next project. 
 */ 
