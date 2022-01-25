@@ -30,4 +30,4 @@ Desktop
 
 Mobile 
 
-![Mobile Screen](./screenshots/mobile-screenshot-375x800.png)
+![Mobile Screen](./screenshots/mobile-screenshot-375x975.png)
